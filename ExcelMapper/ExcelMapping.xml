@@ -15,13 +15,13 @@
       <SourceSheet>Sheet1</SourceSheet>
       <SourceCell>A1</SourceCell>
       <TargetSheet>Sheet1</TargetSheet>
-      <TargetCell>A2</TargetCell>
+      <TargetCell>A{0}</TargetCell>
     </Cell>
     <Cell>
       <SourceSheet>Sheet1</SourceSheet>
       <SourceCell>B1</SourceCell>
       <TargetSheet>Sheet1</TargetSheet>
-      <TargetCell>B2</TargetCell>
+      <TargetCell>B{0}</TargetCell>
     </Cell>
   </Ranges>
 </ExcelMap>

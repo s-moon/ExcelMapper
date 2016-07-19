@@ -19,13 +19,14 @@ namespace ExcelMapper
                 Environment.Exit(1);
             }
             workbook = excel.Workbooks.Open(filename, true, true);
-            var cellk = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets;
+            //var cellk = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets;
         }
 
         public void Process()
         {
-            worksheet = (Worksheet)workbook.Worksheets.get_Item(1);
+            worksheet = (Worksheet)workbook.Sheets["Sheet1"];
             var cellValue = worksheet.Cells[1, 1];
+            var x = cellValue.Value2;
         }
 
         public void Close()
