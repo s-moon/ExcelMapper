@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExcelMap>
+  <Files>
+    <Source>
+      <folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\ExcelMapper\bin\Debug\</folder>
+      <name>excel.xlsx</name>
+    </Source>
+    <Target>
+      <folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\ExcelMapper\bin\Debug\</folder>
+      <name>excel2.xlsx</name>
+    </Target>
+  </Files>
+  <Ranges>
+    <Cell>
+      <SourceSheet>Sheet1</SourceSheet>
+      <SourceCell>A1</SourceCell>
+      <TargetSheet>Sheet1</TargetSheet>
+      <TargetCell>A2</TargetCell>
+    </Cell>
+    <Cell>
+      <SourceSheet>Sheet1</SourceSheet>
+      <SourceCell>B1</SourceCell>
+      <TargetSheet>Sheet1</TargetSheet>
+      <TargetCell>B2</TargetCell>
+    </Cell>
+  </Ranges>
+</ExcelMap>
