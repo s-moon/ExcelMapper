@@ -19,7 +19,7 @@ namespace ExcelMapper
                 Environment.Exit(1);
             }
             workbook = excel.Workbooks.Open(filename, true, true);
-            //var cellk = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets;
+            var cellk = (Worksheet)workbook.Worksheets;
         }
 
         public void Process()

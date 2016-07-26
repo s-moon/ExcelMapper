@@ -2,39 +2,28 @@
 
 using System.Xml.Serialization;
 using System;
+using NLog;
 
 namespace ExcelMapper
 {
     class Program
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
-            XmlSerializer deserializer = new XmlSerializer(typeof(ExcelMap));
-            TextReader reader = new StreamReader(@"ExcelMapping.xml");
-            var excelMapData = (ExcelMap)deserializer.Deserialize(reader);
-            using (var xf = new ExcelFile(@"F:\Projects\Open Source\ExcelMapper\ExcelMapper\bin\Debug\excel.xlsx"))
-            {
-                xf.Process();
-                xf.Close();
-            }
-            reader.Close();
+            logger.Info("Excel Mapper starting.");
+
+            var processor = new ExcelMapperProcessor();
+            processor.ProcessFiles();
+
+            logger.Info("Excel Mapper ending.");
         }
-        private static void releaseObject(object obj)
-        {
-            try
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                obj = null;
-                Console.WriteLine("oops - cleaning up");
-            }
-            finally
-            {
-                GC.Collect();
-            }
-        }
+
+        //using (var xf = new ExcelFile(@"F:\Projects\Open Source\ExcelMapper\ExcelMapper\bin\Debug\excel.xlsx"))
+        //{
+        //    xf.Process();
+        //    xf.Close();
+        //}
+        //reader.Close();
     }
 }

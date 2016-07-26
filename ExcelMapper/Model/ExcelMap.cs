@@ -28,8 +28,9 @@ public partial class ExcelMap
     private object[] itemsField;
 
     /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Files", typeof(ExcelMapFiles), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
     [System.Xml.Serialization.XmlElementAttribute("Ranges", typeof(ExcelMapRanges), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    [System.Xml.Serialization.XmlElementAttribute("Source", typeof(ExcelMapSource), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    [System.Xml.Serialization.XmlElementAttribute("Target", typeof(ExcelMapTarget), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
     public object[] Items
     {
         get
@@ -39,132 +40,6 @@ public partial class ExcelMap
         set
         {
             this.itemsField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class ExcelMapFiles
-{
-
-    private ExcelMapFilesSource[] sourceField;
-
-    private ExcelMapFilesTarget[] targetField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Source", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public ExcelMapFilesSource[] Source
-    {
-        get
-        {
-            return this.sourceField;
-        }
-        set
-        {
-            this.sourceField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute("Target", Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public ExcelMapFilesTarget[] Target
-    {
-        get
-        {
-            return this.targetField;
-        }
-        set
-        {
-            this.targetField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class ExcelMapFilesSource
-{
-
-    private string folderField;
-
-    private string nameField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string folder
-    {
-        get
-        {
-            return this.folderField;
-        }
-        set
-        {
-            this.folderField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
-        }
-    }
-}
-
-/// <remarks/>
-[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
-[System.SerializableAttribute()]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-public partial class ExcelMapFilesTarget
-{
-
-    private string folderField;
-
-    private string nameField;
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string folder
-    {
-        get
-        {
-            return this.folderField;
-        }
-        set
-        {
-            this.folderField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-    public string name
-    {
-        get
-        {
-            return this.nameField;
-        }
-        set
-        {
-            this.nameField = value;
         }
     }
 }
@@ -265,6 +140,106 @@ public partial class ExcelMapRangesCell
         set
         {
             this.targetCellField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class ExcelMapSource
+{
+
+    private string folderField;
+
+    private string nameField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string Folder
+    {
+        get
+        {
+            return this.folderField;
+        }
+        set
+        {
+            this.folderField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string Name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.6.1055.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+public partial class ExcelMapTarget
+{
+
+    private string folderField;
+
+    private string nameField;
+
+    private string startRowField;
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string Folder
+    {
+        get
+        {
+            return this.folderField;
+        }
+        set
+        {
+            this.folderField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string Name
+    {
+        get
+        {
+            return this.nameField;
+        }
+        set
+        {
+            this.nameField = value;
+        }
+    }
+
+    /// <remarks/>
+    [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
+    public string StartRow
+    {
+        get
+        {
+            return this.startRowField;
+        }
+        set
+        {
+            this.startRowField = value;
         }
     }
 }

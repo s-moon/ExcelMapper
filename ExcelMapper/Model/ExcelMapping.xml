@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ExcelMap>
-  <Files>
-    <Source>
-      <folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\ExcelMapper\bin\Debug\</folder>
-      <name>excel.xlsx</name>
-    </Source>
-    <Target>
-      <folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\ExcelMapper\bin\Debug\</folder>
-      <name>excel2.xlsx</name>
-    </Target>
-  </Files>
+  <Source>
+    <Folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\bin\Debug\InFolder</Folder>
+    <Name>INT-ZMN-Risk-*.xlsx</Name>
+  </Source>
+  <Target>
+    <Folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\bin\Debug\InFolder</Folder>
+    <Name>INT-ZNM-Risk_Register_{0}.xlsx</Name>
+    <StartRow>5</StartRow>
+  </Target>
   <Ranges>
     <Cell>
       <SourceSheet>Sheet1</SourceSheet>
