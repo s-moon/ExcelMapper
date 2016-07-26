@@ -1,9 +1,11 @@
-﻿using System;
+﻿using NLog;
+using System;
 
 namespace ExcelMapper
 {
     internal class ExcelMapperProcessor
     {
+        private Logger logger = LogManager.GetCurrentClassLogger();
         Settings settings;
         ExcelMapperConfiguration emp;
 
@@ -16,39 +18,38 @@ namespace ExcelMapper
         public void ProcessFiles()
         {
             var filesToProcess = FilesToProcess();
-            foreach (var excelFile in filesToProcess)
+            if (filesToProcess == null || filesToProcess.Length == 0)
             {
-                ProcessFile(excelFile, emp.Ranges.Cell);
+                logger.Info("No files to process since last successful run of: " + settings.LastRun);
+                return;
             }
 
-            settings.WriteSetting(Settings.LastRunSetting, DateTime.Now.ToString());
+            int row = emp.StartRow;
+            foreach (var excelFile in filesToProcess)
+            {
+                ProcessFile(excelFile, emp.CellRanges, row++);
+            }
+
+            //settings.WriteSetting(Settings.LastRunSetting, DateTime.Now.ToString());
         }
 
-        private void ProcessFile(string excelFile, ExcelMapRangesCell[] cell)
+        private void ProcessFile(string excelFile, ExcelMapRangesCell[] cell, int row)
         {
-            
-            // open Excel file
-
-            // copy all cells to destination
-            // read settings
-            //var x = emp.Ranges;
-
-            //for (int i = 0; i < x.Cell.Length; i++)
-            //{
-            //    Console.WriteLine("From:" + x.Cell[i].SourceSheet + "!" + x.Cell[i].SourceCell); ;
-            //    Console.WriteLine("To:" + x.Cell[i].TargetSheet + "!" + x.Cell[i].TargetCell);
-            //}
+            logger.Info("Processing: {0}", excelFile);
+            var xf = new ExcelFile(excelFile); 
+            for (int i = 0; i < cell.Length; i++)
+            {
+                logger.Info(cell[i].SourceSheet + "!" + cell[i].SourceCell +
+                    "(" + xf.GetCell(cell[i].SourceSheet, cell[i].SourceCell) + ")" +
+                    " => " + cell[i].TargetSheet + "!" + string.Format(cell[i].TargetCell, row));
+            }
+            xf.Close(false);
         }
 
         private string[] FilesToProcess()
         {
             var fm = new FileMonitor(emp.SourceFolder, emp.SourceFile);
             return fm.AvailableFiles(settings.LastRun);
-        }
-
-        private ExcelMapRangesCell[] GenerateRangesToCopy()
-        {
-            return null;
         }
     }
 }

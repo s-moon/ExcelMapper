@@ -11,16 +11,16 @@
   </Target>
   <Ranges>
     <Cell>
-      <SourceSheet>Sheet1</SourceSheet>
-      <SourceCell>A1</SourceCell>
-      <TargetSheet>Sheet1</TargetSheet>
+      <SourceSheet>DRAFT01</SourceSheet>
+      <SourceCell>C2</SourceCell>
+      <TargetSheet>Database</TargetSheet>
       <TargetCell>A{0}</TargetCell>
     </Cell>
     <Cell>
-      <SourceSheet>Sheet1</SourceSheet>
-      <SourceCell>B1</SourceCell>
-      <TargetSheet>Sheet1</TargetSheet>
-      <TargetCell>B{0}</TargetCell>
+      <SourceSheet>DRAFT01</SourceSheet>
+      <SourceCell>I2</SourceCell>
+      <TargetSheet>Database</TargetSheet>
+      <TargetCell>C{0}</TargetCell>
     </Cell>
   </Ranges>
 </ExcelMap>

@@ -64,12 +64,22 @@ namespace ExcelMapper
             }
         }
 
-        public ExcelMapRanges Ranges
+        public ExcelMapRangesCell[] CellRanges
         {
             get
             {
-                return (ExcelMapRanges)excelMapData.Items[2];
+                ExcelMapRanges emr = (ExcelMapRanges)excelMapData.Items[2];
+                return emr.Cell;
             }   
+        }
+
+        public int StartRow
+        {
+            get
+            {
+                var element = (ExcelMapTarget)excelMapData.Items[1];
+                return Int32.Parse(element.StartRow);
+            }
         }
     }
 }
