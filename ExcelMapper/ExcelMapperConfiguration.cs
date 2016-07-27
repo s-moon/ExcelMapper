@@ -52,7 +52,7 @@ namespace ExcelMapper
         {
             get
             {
-                return ((ExcelMapTarget)excelMapData.Items[0]).Folder;
+                return (((ExcelMapTarget)excelMapData.Items[1])).Folder;
             }
         }
 
@@ -60,7 +60,7 @@ namespace ExcelMapper
         {
             get
             {
-                return ((ExcelMapTarget)excelMapData.Items[0]).Name;
+                return ((ExcelMapTarget)excelMapData.Items[1]).Name;
             }
         }
 

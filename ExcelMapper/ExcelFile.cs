@@ -39,13 +39,18 @@ namespace ExcelMapper
             return cellValue;
         }
 
-        public void SetCell(string sheet, string cell, Range value)
+        internal void SaveAs(string path)
+        {
+            workbook.SaveAs(path);
+        }
+
+        public void SetCell(string sheet, string cell, object value)
         {
             worksheet = (Worksheet)workbook.Sheets[sheet];
             worksheet.Cells.Range[cell].Value2 = value;
         }
 
-        public void Close(bool save)
+        public void Close(bool save = false)
         {
             if (save) { workbook.Save(); }
             if (workbook != null) { workbook.Close(false); }

@@ -25,7 +25,7 @@ namespace ExcelMapper
 
         public string[] AvailableFiles(DateTime newerThanDate)
         {
-            string[] results = null;
+            var results = new string[0];
             try
             {
                 DirectoryInfo d = new DirectoryInfo(Folder);
@@ -56,6 +56,41 @@ namespace ExcelMapper
                 Environment.Exit(-1);
             }
            
+            return results;
+        }
+
+        public string[] AllFiles()
+        {
+            string[] results = null;
+            try
+            {
+                DirectoryInfo d = new DirectoryInfo(Folder);
+                FileInfo[] files = d.GetFiles(FileMask);
+
+                results = files
+                    .Select(i => i.FullName).ToArray();
+            }
+            catch (ArgumentNullException e)
+            {
+                logger.Error("Is the file or folder name missing? " + e);
+                Environment.Exit(-1);
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                logger.Error("Unable to access folder: " + Folder + " : " + e);
+                Environment.Exit(-1);
+            }
+            catch (SecurityException e)
+            {
+                logger.Error("Oops. This looks like a permissions problem with folder: " + Folder + " : " + e);
+                Environment.Exit(-1);
+            }
+            catch (Exception e)
+            {
+                logger.Error("Something terrible happened that I couldn't work around. " + e);
+                Environment.Exit(-1);
+            }
+
             return results;
         }
     }

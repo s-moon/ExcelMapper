@@ -6,7 +6,7 @@
   </Source>
   <Target>
     <Folder>F:\Projects\Open Source\ExcelMapper\ExcelMapper\bin\Debug\InFolder</Folder>
-    <Name>INT-ZNM-Risk_Register_{0}.xlsx</Name>
+    <Name>INT-ZNM-Risk_Register{0}.xlsx</Name>
     <StartRow>5</StartRow>
   </Target>
   <Ranges>
