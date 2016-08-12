@@ -6,4 +6,4 @@ A tool to map cells from one spreadsheet into another. Particularly, mapping a r
 * C#
 * Excel Interop
 * XML
-* NLog
+* NLog (4.3.6)
