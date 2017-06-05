@@ -74,7 +74,7 @@ namespace ExcelMapper
             catch (Exception ex)
             {
                 obj = null;
-                Console.WriteLine("oops - cleaning up");
+                Console.WriteLine("oops - cleaning up. " + ex);
             }
             finally
             {
