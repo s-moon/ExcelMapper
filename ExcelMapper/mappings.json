@@ -1,0 +1,62 @@
+﻿{
+  "OneToMany": [
+    {
+      "SrcFolder": "F:\\InFiles\\",
+      "SrcFilemask": "OL_*",
+      "DstFolder": "F:\\InFiles\\",
+      "DstFileMask": "CR_",
+      "DstFileMaskValue": "D4,D{0}",
+      "StartRow": "5",
+      "Cells": [
+        {
+          "SrcSheet": "Object list",
+          "SrcCell": "D4",
+          "DstSheet": "Sheet1",
+          "DstCell": "J3"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "D5",
+          "DstSheet": "Sheet1",
+          "DstCell": "B5"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "D{0}",
+          "DstSheet": "Sheet1",
+          "DstCell": "B5"
+        }
+      ]
+    }
+  ],
+  "ManyToOne": [
+    {
+      "SrcFolder": "F:\\InFiles\\",
+      "SrcFilemask": "OL_*",
+      "DstFolder": "F:\\InFiles\\",
+      "DstFileMask": "CR_{0}",
+      "DstFileMaskValue": "D5",
+      "StartRow": "14",
+      "Cells": [
+        {
+          "SrcSheet": "Object list",
+          "SrcCell": "D4",
+          "DstSheet": "Sheet1",
+          "DstCell": "J3"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "D5",
+          "DstSheet": "Sheet1",
+          "DstCell": "B5"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "D{0}",
+          "DstSheet": "Sheet1",
+          "DstCell": "B5"
+        }
+      ]
+    }
+  ]
+}

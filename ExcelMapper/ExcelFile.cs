@@ -74,7 +74,7 @@ namespace ExcelMapper
             catch (Exception ex)
             {
                 obj = null;
-                Console.WriteLine("oops - cleaning up. " + ex);
+                logger.Error("Problems releasing object ( " + ex + ")");
             }
             finally
             {

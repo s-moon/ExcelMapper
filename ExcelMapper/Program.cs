@@ -19,12 +19,5 @@ namespace ExcelMapper
             logger.Info("Excel Mapper ending.");
             logger.Info("");
         }
-
-        //using (var xf = new ExcelFile(@"F:\Projects\Open Source\ExcelMapper\ExcelMapper\bin\Debug\excel.xlsx"))
-        //{
-        //    xf.Process();
-        //    xf.Close();
-        //}
-        //reader.Close();
     }
 }
