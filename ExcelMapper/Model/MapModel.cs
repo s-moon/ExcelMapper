@@ -15,6 +15,7 @@ namespace ExcelMapper.Model
 
     public class OneToMany
     {
+        public string Template { get; set; }
         public string SrcFolder { get; set; }
         public string SrcFilemask { get; set; }
         public string DstFolder { get; set; }
@@ -34,6 +35,7 @@ namespace ExcelMapper.Model
 
     public class ManyToOne
     {
+        public string Template { get; set; }
         public string SrcFolder { get; set; }
         public string SrcFilemask { get; set; }
         public string DstFolder { get; set; }

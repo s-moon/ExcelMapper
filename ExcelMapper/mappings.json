@@ -1,9 +1,10 @@
 ﻿{
   "OneToMany": [
     {
-      "SrcFolder": "F:\\InFiles\\",
+      "Template": "D:\\InFiles\\_CR_Template.xlsx",
+      "SrcFolder": "D:\\InFiles\\",
       "SrcFilemask": "OL_*",
-      "DstFolder": "F:\\InFiles\\",
+      "DstFolder": "D:\\InFiles\\",
       "DstFileMask": "CR_",
       "DstFileMaskValue": "D4,D{0}",
       "StartRow": "5",
@@ -31,6 +32,7 @@
   ],
   "ManyToOne": [
     {
+      "Template": "F:\\InFiles\\_OL_Template.xlsx",
       "SrcFolder": "F:\\InFiles\\",
       "SrcFilemask": "OL_*",
       "DstFolder": "F:\\InFiles\\",
