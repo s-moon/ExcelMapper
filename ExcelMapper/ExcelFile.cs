@@ -20,9 +20,13 @@ namespace ExcelMapper
                 logger.Error("Unable to run Microsoft Excel. Is it installed?");
                 Environment.Exit(-1);
             }
+
+            excel.DisplayAlerts = false;
+
             if (File.Exists(Filename))
             {
-                workbook = excel.Workbooks.Open(Filename, true, true);
+                // update the links but don't open as read only
+                workbook = excel.Workbooks.Open(Filename, true, false);
             }
             else
             {
@@ -39,9 +43,26 @@ namespace ExcelMapper
             return cellValue;
         }
 
+        public Object GetPictureCell(string sheet, int item)
+        {
+            worksheet = (Worksheet)workbook.Sheets[sheet];
+            var picture = worksheet.Shapes.Item(item);
+            return picture;
+        }
+
         internal void SaveAs(string path)
         {
             workbook.SaveAs(path);
+        }
+
+        public void SetPictureCell(string sheet, string cell, object value)
+        {
+            worksheet = (Worksheet)workbook.Sheets[sheet];
+            Microsoft.Office.Interop.Excel.Range oRange = (Microsoft.Office.Interop.Excel.Range)worksheet.Range[cell];
+            float Left = (float)((double)oRange.Left);
+            float Top = (float)((double)oRange.Top);
+            const float ImageSize = 32;
+            //worksheet.Shapes.AddPicture("C:\\pic.JPG", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, Left, Top, ImageSize, ImageSize);
         }
 
         public void SetCell(string sheet, string cell, object value)

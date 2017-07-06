@@ -19,6 +19,7 @@ namespace ExcelMapper.Model
         public string SrcFilemask { get; set; }
         public string DstFolder { get; set; }
         public string DstFileMask { get; set; }
+        public string DstFileMaskSheet { get; set; }
         public string DstFileMaskValue { get; set; }
         public string StartRow { get; set; }
         public Cell[] Cells { get; set; }
