@@ -11,10 +11,10 @@ namespace ExcelMapper
         private Application excel;
         private Workbook workbook;
         private Worksheet worksheet;
-        public ExcelFile(string template, string filename)
+        public ExcelFile(string template, string filename = "")
         {
             Filename = filename;
-            var excel = new Application();
+            this.excel = new Application();
             if (excel == null)
             {
                 logger.Error("Unable to run Microsoft Excel. Is it installed?");
@@ -32,7 +32,7 @@ namespace ExcelMapper
             {
                 if (File.Exists(template))
                 {
-                    workbook = excel.Workbooks.Open(Filename, true, false);
+                    workbook = excel.Workbooks.Open(template, true, false);
                 }
                 else
                 {
@@ -68,7 +68,7 @@ namespace ExcelMapper
             Microsoft.Office.Interop.Excel.Range oRange = (Microsoft.Office.Interop.Excel.Range)worksheet.Range[cell];
             float Left = (float)((double)oRange.Left);
             float Top = (float)((double)oRange.Top);
-            const float ImageSize = 32;
+            //const float ImageSize = 32;
             //worksheet.Shapes.AddPicture("C:\\pic.JPG", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, Left, Top, ImageSize, ImageSize);
         }
 
@@ -87,12 +87,12 @@ namespace ExcelMapper
 
         public void Dispose()
         {
-            if (worksheet != null) { releaseObject(worksheet); }
-            if (workbook != null) { releaseObject(workbook); }
-            if (excel != null) { releaseObject(excel); }
+            if (worksheet != null) { ReleaseObject(worksheet); }
+            if (workbook != null) { ReleaseObject(workbook); }
+            if (excel != null) { ReleaseObject(excel); }
         }
 
-        private void releaseObject(object obj)
+        private void ReleaseObject(object obj)
         {
             try
             {

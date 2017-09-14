@@ -31,7 +31,7 @@ namespace ExcelMapper
                 FileInfo[] files = d.GetFiles(FileMask);
 
                 results = files
-                    .Where(i => i.LastWriteTime >= newerThanDate)
+                    //.Where(i => i.LastWriteTime >= newerThanDate)
                     .Select(i => i.FullName).ToArray();
             }
             catch (ArgumentNullException e)

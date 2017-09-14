@@ -1,9 +1,10 @@
 ﻿{
   "OneToMany": [
     {
-      "SrcFolder": "D:\\InFiles\\",
-      "SrcFilemask": "OL_*",
-      "DstFolder": "D:\\InFiles\\",
+      "Template": "F:\\InFiles\\Templates\\CR_{0}.xlsx",
+      "SrcFolder": "F:\\InFiles\\",
+      "SrcFileMask": "OL_*",
+      "DstFolder": "F:\\InFiles\\",
       "DstFileMask": "CR_",
       "DstFileMaskSheet": "Object list",
       "DstFileMaskValue": "D{0}",
@@ -290,31 +291,25 @@
   ],
   "ManyToOne": [
     {
-      "SrcFolder": "D:\\InFiles\\",
-      "SrcFilemask": "OL_*",
-      "DstFolder": "D:\\InFiles\\",
-      "DstFileMask": "CR_{0}",
-      "DstFileMaskSheet": "Object list",
-      "DstFileMaskValue": "D5",
+      "SrcFolder": "F:\\InFiles\\",
+      "SrcFileMask": "CR_*",
+      "DstFolder": "F:\\InFiles\\",
+      "DstFileMask": "OL_{0}",
+      "DstFileMaskValue": "J3",
+      "DstFileMaskSheet": "Sheet1",
       "StartRow": "14",
+      "SrcSheet": "Sheet1",
+      "SrcLoanNumberCell": "J3",
+      "SrcRegNumberCell": "K1",
+      "DstSheet": "Object list",
+      "LoanNumberCellMask": "D{0}",
+      "RegNumberCellMask": "K1",
       "Cells": [
         {
-          "SrcSheet": "Object list",
+          "SrcSheet": "Sheet1",
           "SrcCell": "D4",
-          "DstSheet": "Sheet1",
-          "DstCell": "J3"
-        },
-        {
-          "SrcSheet": "Object list",
-          "SrcCell": "D5",
-          "DstSheet": "Sheet1",
-          "DstCell": "B5"
-        },
-        {
-          "SrcSheet": "Object list",
-          "SrcCell": "D{0}",
-          "DstSheet": "Sheet1",
-          "DstCell": "B5"
+          "DstSheet": "Object list",
+          "DstCell": "J{0}"
         }
       ]
     }
