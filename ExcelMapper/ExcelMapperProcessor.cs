@@ -162,7 +162,7 @@ namespace ExcelMapper
         {
             string srcCell = String.Empty;
             string dstCell = String.Empty;
-            int destRowNum = FindRegNumberRow(regNumber, startRowNum, entry.SrcSheet, entry.LoanNumberCellMask, dstExcelFile);
+            int destRowNum = FindRegNumberRow(regNumber, startRowNum, entry.DstSheet, entry.LoanNumberCellMask, dstExcelFile);
 
             if (-1 == destRowNum)
             {
@@ -176,8 +176,8 @@ namespace ExcelMapper
                 srcCell = string.Format(cell.SrcCell, destRowNum);
                 dstCell = string.Format(cell.DstCell, destRowNum);
 
-                var srcCellContents = (srcExcelFile.GetCell(cell.SrcSheet, srcCell)).ToString().Trim();
-                var dstCellContents = (dstExcelFile.GetCell(cell.DstSheet, dstCell)).ToString().Trim();
+                var srcCellContents = (srcExcelFile.GetCell(cell.SrcSheet, srcCell) ?? string.Empty).ToString().Trim();
+                var dstCellContents = (dstExcelFile.GetCell(cell.DstSheet, dstCell) ?? string.Empty).ToString().Trim();
 
                 if (string.Empty == dstCellContents)
                 {
