@@ -307,9 +307,81 @@
       "Cells": [
         {
           "SrcSheet": "Sheet1",
-          "SrcCell": "D4",
+          "SrcCell": "B15",
           "DstSheet": "Object list",
-          "DstCell": "J{0}"
+          "DstCell": "AZ{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B18",
+          "DstSheet": "Object list",
+          "DstCell": "AB{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B19",
+          "DstSheet": "Object list",
+          "DstCell": "AC{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B20",
+          "DstSheet": "Object list",
+          "DstCell": "AX{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "H20",
+          "DstSheet": "Object list",
+          "DstCell": "BL{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B21",
+          "DstSheet": "Object list",
+          "DstCell": "AY{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B22",
+          "DstSheet": "Object list",
+          "DstCell": "BA{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B52",
+          "DstSheet": "Object list",
+          "DstCell": "S{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "H54",
+          "DstSheet": "Object list",
+          "DstCell": "T{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B55",
+          "DstSheet": "Object list",
+          "DstCell": "Q{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B60",
+          "DstSheet": "Object list",
+          "DstCell": "U{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B62",
+          "DstSheet": "Object list",
+          "DstCell": "V{0}"
+        },
+        {
+          "SrcSheet": "Sheet1",
+          "SrcCell": "B63",
+          "DstSheet": "Object list",
+          "DstCell": "W{0}"
         }
       ]
     }
