@@ -11,7 +11,7 @@ namespace ExcelMapper
         private Application excel;
         private Workbook workbook;
         private Worksheet worksheet;
-        public ExcelFile(string filename)
+        public ExcelFile(string template, string filename)
         {
             Filename = filename;
             var excel = new Application();
@@ -30,7 +30,14 @@ namespace ExcelMapper
             }
             else
             {
-                workbook = excel.Workbooks.Add(Filename);
+                if (File.Exists(template))
+                {
+                    workbook = excel.Workbooks.Open(Filename, true, false);
+                }
+                else
+                {
+                    workbook = excel.Workbooks.Add(Filename);
+                }
             }
         }
 
